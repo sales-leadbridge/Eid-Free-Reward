@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 /* ===== BLOGGER RESET ===== */
 html,body{margin:0!important;padding:0!important;}
@@ -51,7 +51,7 @@ html,body{margin:0!important;padding:0!important;}
   --bord:rgba(232,130,12,0.2);
   --bord2:rgba(10,168,84,0.2);
   --shadow:rgba(180,100,0,0.12);
-  --font-display:'Instrument Serif',serif;
+  --font-display:'Baloo 2',cursive;
   --font-body:'Space Grotesk',sans-serif;
   --r-sm:12px; --r-md:18px; --r-lg:26px; --r-xl:32px;
 }
@@ -138,7 +138,7 @@ body::after{
   background:var(--surface);
   border:1px solid rgba(232,130,12,.12);
   border-radius:var(--r-md);padding:10px;margin:14px 0;
-  text-align:center;min-height:72px;
+  text-align:center;min-height:60px;
   display:flex;align-items:center;justify-content:center;flex-direction:column;
   position:relative;overflow:hidden;
   box-shadow:0 2px 12px var(--shadow);
@@ -196,27 +196,57 @@ body::after{
 
 .site-name{
   font-family:var(--font-display);
-  font-size:clamp(1.8rem,8vw,3rem);
-  font-weight:400;
+  font-size:clamp(2.2rem,9vw,3.4rem);
+  font-weight:800;
   font-style:normal;
-  color:var(--text);
-  line-height:1.1;
-  letter-spacing:-.5px;
+  line-height:1.15;
+  letter-spacing:1px;
   word-break:break-word;
   overflow-wrap:break-word;
   max-width:100%;
+  /* Golden festive gradient — congratulations feel */
+  background:linear-gradient(
+    135deg,
+    #FFD700 0%,
+    #FF8C00 18%,
+    #FFD700 35%,
+    #FFFFFF 50%,
+    #FFD700 65%,
+    #FF6B00 82%,
+    #FFD700 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:goldShimmer 3s linear infinite;
+  filter:drop-shadow(0 3px 12px rgba(255,180,0,0.55));
+}
+@keyframes goldShimmer{
+  0%{background-position:0% center;}
+  100%{background-position:200% center;}
+}
+@keyframes greenShimmer{
+  0%{background-position:0% center;}
+  100%{background-position:200% center;}
 }
 .site-name-sub{
   display:block;
   font-family:var(--font-body);
-  font-size:clamp(.6rem,2.5vw,.75rem);
+  font-size:clamp(.68rem,2.5vw,.8rem);
   font-style:normal;
-  color:var(--text3);
-  letter-spacing:2px;
+  letter-spacing:2.5px;
   text-transform:uppercase;
-  margin-top:5px;
-  font-weight:500;
+  margin-top:6px;
+  font-weight:700;
   word-break:break-word;
+  /* Green festive sub color */
+  background:linear-gradient(90deg,#0AA854,#00D97E,#0AA854);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:greenShimmer 4s linear infinite;
 }
 
 .hdr-badges{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap;max-width:100%;padding:0 4px;box-sizing:border-box;}
@@ -636,7 +666,7 @@ body::after{
   border-radius:50%;display:flex;align-items:center;justify-content:center;
   animation:logoFloat 2.2s ease-in-out infinite;
 }
-.pl-title{font-family:var(--font-display);font-size:2rem;font-style:normal;color:var(--text);margin-bottom:12px;}
+.pl-title{font-family:var(--font-display);font-size:2rem;font-style:normal;font-weight:800;color:var(--text);margin-bottom:12px;}
 .pl-txt{font-family:var(--font-body);font-size:.95rem;color:var(--text2);line-height:1.75;max-width:320px;margin-bottom:22px;}
 .pl-date-box{
   background:linear-gradient(145deg,rgba(232,130,12,.1),rgba(201,109,5,.04));
@@ -694,7 +724,7 @@ body::after{
   text-align:center;padding:24px 0 55px;
   border-top:1px solid rgba(232,130,12,.12);margin-top:22px;
 }
-.footer-name{font-family:var(--font-display);font-size:1.2rem;font-style:normal;color:var(--text3);margin-bottom:8px;}
+.footer-name{font-family:var(--font-display);font-size:1.3rem;font-style:normal;font-weight:700;color:var(--text3);margin-bottom:8px;}
 .footer-txt{font-family:var(--font-body);font-size:.62rem;color:var(--text3);line-height:2;letter-spacing:.5px;opacity:.6;}
 
 /* ===== SECTION DIVIDER ===== */
@@ -714,8 +744,8 @@ body::after{
 /* ===== ENHANCED MOBILE FRIENDLY ===== */
 @media(max-width:600px){
   .mc{padding:8px 12px 80px;}
-  .site-name{font-size:2.4rem;}
-  .site-name-sub{font-size:.82rem;letter-spacing:2px;}
+  .site-name{font-size:2.6rem;letter-spacing:-.3px;}
+  .site-name-sub{font-size:.78rem;letter-spacing:2px;}
   .hero-card{padding:22px 16px 18px;}
   .hero-amount{font-size:clamp(3.5rem,15vw,5rem);}
   .hero-amt-sub{font-size:.97rem;}
@@ -1337,23 +1367,54 @@ function appendScript(src, attrs) {
 function injectBannerIsolated(containerId, key, w, h) {
   var el = ge(containerId);
   if (!el) return;
-  var srcdoc = '<!DOCTYPE html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;}</style></head><body>'
-    + '<scr'+'ipt>var atOptions={"key":"' + key + '","format":"iframe","height":' + h + ',"width":' + w + ',"params":{}}<\/scr'+'ipt>'
-    + '<scr'+'ipt src="https://www.highperformanceformat.com/' + key + '/invoke.js"><\/scr'+'ipt>'
+
+  /* Get the actual available width of the container */
+  var containerW = el.parentElement ? el.parentElement.offsetWidth : window.innerWidth;
+  if (!containerW || containerW < 10) containerW = window.innerWidth;
+  var padding = 20; /* account for adz padding */
+  var availW = containerW - padding;
+
+  /* Scale down if ad is wider than container, scale up if smaller (up to 1x) */
+  var scale = Math.min(1, availW / w);
+  var scaledH = Math.round(h * scale);
+
+  var srcdoc = '<!DOCTYPE html><html><head>'
+    + '<style>html,body{margin:0;padding:0;overflow:hidden;width:'+w+'px;height:'+h+'px;}</style>'
+    + '</head><body>'
+    + '<scr'+'ipt>var atOptions={"key":"'+key+'","format":"iframe","height":'+h+',"width":'+w+',"params":{}}<\/scr'+'ipt>'
+    + '<scr'+'ipt src="https://www.highperformanceformat.com/'+key+'/invoke.js"><\/scr'+'ipt>'
     + '</body></html>';
+
   var iframe = document.createElement('iframe');
   iframe.srcdoc = srcdoc;
-  var availW = window.innerWidth - 28;
-  var scale = (w > availW) ? (availW / w) : 1;
-  if (scale < 1) {
-    iframe.style.cssText = 'border:0;width:'+w+'px;height:'+h+'px;max-width:none;display:block;margin:0 auto;transform:scale('+scale.toFixed(3)+');transform-origin:top center;';
-    el.style.height = Math.round(h * scale) + 'px';
-    el.style.overflow = 'hidden';
-  } else {
-    iframe.style.cssText = 'border:0;width:'+w+'px;height:'+h+'px;max-width:100%;display:block;margin:0 auto;';
-  }
   iframe.scrolling = 'no';
   iframe.frameBorder = '0';
+  iframe.style.cssText = [
+    'border:0',
+    'display:block',
+    'margin:0 auto',
+    'width:'+w+'px',
+    'height:'+h+'px',
+    'transform:scale('+scale.toFixed(4)+')',
+    'transform-origin:top center',
+    'pointer-events:auto'
+  ].join(';');
+
+  /* Set container height to match scaled ad */
+  el.style.width = '100%';
+  el.style.height = scaledH + 'px';
+  el.style.overflow = 'hidden';
+  el.style.display = 'flex';
+  el.style.alignItems = 'center';
+  el.style.justifyContent = 'center';
+
+  /* Also set the .adz parent height */
+  var adzParent = el.parentElement;
+  if (adzParent && adzParent.classList.contains('adz')) {
+    adzParent.style.minHeight = (scaledH + 20) + 'px';
+    adzParent.style.padding = '10px';
+  }
+
   el.appendChild(iframe);
 }
 
@@ -1764,7 +1825,7 @@ function runApp() {
   renderSlots();
   renderTestis();
   restoreLog();
-  setTimeout(loadAds,800);
+  setTimeout(loadAds,1200);
   setTimeout(startLive,6000);
   setTimeout(function(){
     var msg=ST.shares>0
